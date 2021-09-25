@@ -25,7 +25,7 @@
     "color": {
       "field": "Ladder score",
       "type": "quantitative",
-      "scale": {"type": "linear"}
+      "scale": {"scheme": "tealblues"}
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "Country"},
