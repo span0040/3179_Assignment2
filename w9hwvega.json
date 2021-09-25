@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "World Happiest Countries",
+  "title": "2021 World Happiness Report Ranking",
   "width": 1000,
   "height": 800,
   "data": {
