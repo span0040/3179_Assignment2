@@ -14,11 +14,17 @@
 <body>
   
 <div id="choropleth_map"></div>
+<div id="stacked_barchart"></div>  
 
 <script type="text/javascript">
 
   var spec2 = "ass2map.json";
   vegaEmbed('#choropleth_map', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec3 = "ass2bar.json";
+  vegaEmbed('#stacked_barchart', spec3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
