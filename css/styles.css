@@ -59,12 +59,44 @@
     color: #0f50b3
 }
 
+.select {
+    font-family: 'Ubuntu', sans-serif;
+    width: 80%;
+    height: 20%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .choromap {
     padding-left: 30px;
 }
 
-.suptext {
+.pure-u-5-24 p {
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
-    padding-top: 35px;
+    font-weight: bold;
+}
+
+.cat1 {
+    display: block;
+}
+
+.cat2 {
+    display: none;
+}
+
+.cat3 {
+    display: none;
+}
+
+.cat4 {
+    display: none;
+}
+
+.cat5 {
+    display: none;
+}
+
+.cat6 {
+    display: none;
 }

@@ -28,14 +28,15 @@
         <p>
           The World Happiness Report is an annual report that contains rankings and analysis of national happiness, based on respondent ratings of their own lives.
         </p>
-        <p>The main source of data is the Gallup World Poll, which contains life evaluation categories such as <span class="gdp">Logarithmized GDP per capita</span>, <span class="social_sup">Social Support</span>, 
-          <span class="life_ex">Healthy Life Expectancy</span>, <span class="freedom">Freedom to make life choices</span>, and <span class="corruption">Corruption perception</span> 
-            from respondents from every country polled. These categories are then compiled and weighted to tabluate the <span class="life_lad">Life Ladder Score</span>.
+        <p>The main source of data is the Gallup World Poll, which contains life evaluation categories such as the <span class="life_lad">Life Ladder Score</span>, <span class="gdp">Logarithmized GDP per capita</span>, 
+          <span class="social_sup">Social Support</span>, <span class="life_ex">Healthy Life Expectancy</span>, <span class="freedom">Freedom to make life choices</span>, and <span class="corruption">Corruption perception</span> 
+            from respondents from every country polled.
         </p>
       </div>
-      <div>
-        <select name="seldis" onchange="showHide(this)">
-          
+      <div class="pure-u-1-24"></div>
+      <div class="pure-u-6-24">
+        <h2 style ="padding-top: 50px; font-family: 'Ubuntu', sans-serif;">Select category:</h2>
+        <select class="select" onchange="changedisplay(value)">
           <option value="1">Life Ladder Score</option>
           <option value="2">GDP per Capita</option>
           <option value="3">Social Support</option>
@@ -46,10 +47,12 @@
       </div>
     </div>
   
-    <div class="1">
+    <div class="cat1" id="cat1">
       <div class="choromap" id="map1" style="float:left;"></div>
-      <div class="suptext">
-        <p>test etst test</p>
+      <div class="pure-u-5-24">
+        <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="life_lad">Life Ladder Score</span></h3>
+        <p>The Life Ladder Score is derived from asking respondents to evaluate their current life as a whole using the image of a ladder, 
+            with the best possible life for them as a 10 and the worst possible as a 0.</p>
       </div>
       <div style="clear:both;"></div>
       <div>
@@ -59,15 +62,109 @@
       </div>
     </div>
 
-    <div class="2">
+    <div class="cat2" id="cat2">
       <div class="choromap" id="map2" style="float:left;"></div>
-      <div class="suptext">
-        <p>test etst test</p>
+      <div class="pure-u-5-24">
+        <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="gdp">Logarithmized GDP per capita</span>
+        <p>The statistics of GDP per capita (variable name gdp) in purchasing power parity
+          (PPP) at constant 2017 international dollar prices are from the October 14,
+          2020 update of the World Development Indicators (WDI).</p>
+      </div>
+    </div>
+
+    <div class="cat3" id="cat3">
+      <div class="choromap" id="map3" style="float:left;"></div>
+      <div class="pure-u-5-24">
+        <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="social_sup">Social Support</span>
+        <p>Social Support is the metric that is derived from the respondents'answer to the question "If you were in trouble, do you have 
+            relatives or friends you can count on to help you whenever you need them or not?"</p>
+        <p>Being a binary question (either yes or no) the score is tallied from the average of the responses.</p>
+      </div>
+    </div>
+
+    <div class="cat4" id="cat4">
+      <div class="choromap" id="map4" style="float:left;"></div>
+      <div class="pure-u-5-24">
+        <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="life_ex">Healthy Life Expectancy</span>
+        <p>The Healthy Life Expectancy metric is the statistical measure of how long on average a person is expected to live based on current age and sex specific death rates.</p>
+        <p>For this report, the data was taken from the World Health Organisation's Global Health Observatory data repository.</p>
+      </div>
+    </div>
+
+    <div class="cat5" id="cat5">
+      <div class="choromap" id="map5" style="float:left;"></div>
+      <div class="pure-u-5-24">
+        <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="freedom">Freedom to make life choices</span>
+        <p>Freedom to make life choices is the national average of responses to the question: "Are you satisfied or dissatisfied with your freedom to choose what
+          you do with your life?"</p>
+        
+      </div>
+    </div>
+
+    <div class="cat6" id="cat6">
+      <div class="choromap" id="map6" style="float:left;"></div>
+      <div class="pure-u-5-24">
+        <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="corruption">Corruption perception</span>
+        <p>The Corruption perception metric is derived from the national average of these two questions: "“Is corruption widespread throughout
+          the government or not" and “Is corruption widespread within businesses or not?”</p> 
       </div>
     </div>
        
 
     <script type="text/javascript">
+      function changedisplay(value){
+        if(value == 1){
+          document.getElementById("cat2").style.display = "none";
+          document.getElementById("cat3").style.display = "none";
+          document.getElementById("cat4").style.display = "none";
+          document.getElementById("cat5").style.display = "none";
+          document.getElementById("cat6").style.display = "none";
+          document.getElementById("cat1").style.display = "block";
+        }
+        else if (value == 2){
+          document.getElementById("cat1").style.display = "none";
+          document.getElementById("cat3").style.display = "none";
+          document.getElementById("cat4").style.display = "none";
+          document.getElementById("cat5").style.display = "none";
+          document.getElementById("cat6").style.display = "none";
+          document.getElementById("cat2").style.display = "block";
+        }
+        else if (value == 3){
+          document.getElementById("cat1").style.display = "none";
+          document.getElementById("cat2").style.display = "none";
+          document.getElementById("cat4").style.display = "none";
+          document.getElementById("cat5").style.display = "none";
+          document.getElementById("cat6").style.display = "none";
+          document.getElementById("cat3").style.display = "block";
+        }
+        else if (value == 4){
+          document.getElementById("cat1").style.display = "none";
+          document.getElementById("cat2").style.display = "none";
+          document.getElementById("cat3").style.display = "none";
+          document.getElementById("cat5").style.display = "none";
+          document.getElementById("cat6").style.display = "none";
+          document.getElementById("cat4").style.display = "block";
+        }
+        else if (value == 5){
+          document.getElementById("cat1").style.display = "none";
+          document.getElementById("cat2").style.display = "none";
+          document.getElementById("cat3").style.display = "none";
+          document.getElementById("cat4").style.display = "none";
+          document.getElementById("cat6").style.display = "none";
+          document.getElementById("cat5").style.display = "block";
+        }
+
+        else if (value == 6){
+          document.getElementById("cat1").style.display = "none";
+          document.getElementById("cat2").style.display = "none";
+          document.getElementById("cat3").style.display = "none";
+          document.getElementById("cat4").style.display = "none";
+          document.getElementById("cat5").style.display = "none";
+          document.getElementById("cat6").style.display = "block";
+        }
+
+      }
+
       var spec1 = "map1.json";
       vegaEmbed('#map1', spec1).then(function(result) {}).catch(console.error);
   
@@ -76,6 +173,18 @@
 
       var spec3 = "map2.json";
       vegaEmbed('#map2', spec3).then(function(result) {}).catch(console.error);
+
+      var spec4 = "map3.json";
+      vegaEmbed('#map3', spec4).then(function(result) {}).catch(console.error);
+
+      var spec5 = "map4.json";
+      vegaEmbed('#map4', spec5).then(function(result) {}).catch(console.error);
+
+      var spec6 = "map5.json";
+      vegaEmbed('#map5', spec6).then(function(result) {}).catch(console.error);
+
+      var spec7 = "map6.json";
+      vegaEmbed('#map6', spec7).then(function(result) {}).catch(console.error);
     </script>
   </div>
 </body>
