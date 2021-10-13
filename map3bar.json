@@ -1,0 +1,84 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/span0040/3179_Assignment2/main/ladderscorebar.csv"},
+    "height": {"step": 24},
+    "width": 700,
+    "mark": "bar",
+    "params": [{
+      "name": "region_selection",
+      "bind": {
+          "input": "select",
+          "options": [
+              null,
+              "Commonwealth of Independent States",
+              "East Asia",
+              "Latin America and Caribbean",
+              "Middle East and North Africa",
+              "North America and ANZ",
+              "South Asia",
+              "Sub-Saharan Africa",
+              "Western Europe"
+          ],
+          "labels":[
+              "Show All",
+              "Commonwealth of Independent States",
+              "East Asia",
+              "Latin America and Caribbean",
+              "Middle East and North Africa",
+              "North America and ANZ",
+              "South Asia",
+              "Sub-Saharan Africa",
+              "Western Europe"
+           ],
+          "name": "Region Selection: "
+      }
+   }],
+    "transform": [
+      {"filter": "region_selection == null || datum.Regions == region_selection"}
+    ],
+    "encoding": {
+      "y": {
+        "field": "Country name",
+        "type": "ordinal",
+        "sort": "-x"
+      },
+      "x": {
+        "aggregate": "sum",
+        "field": "Social support",
+        "title": "Social support score"
+      },
+      "color": {
+          "field": "Regions",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Commonwealth of Independent States",
+              "East Asia",
+              "Latin America and Caribbean",
+              "Middle East and North Africa",
+              "North America and ANZ",
+              "South Asia",
+              "Sub-Saharan Africa",
+              "Western Europe"
+            ],
+            "range": [
+              "#863abb",
+              "#863abb",
+              "#863abb",
+              "#863abb",
+              "#863abb",
+              "#863abb",
+              "#863abb",
+              "#863abb"
+            ]
+          }
+      },
+      "tooltip": [
+          {"field": "Country name", "type": "nominal"},
+          {"field": "Regions", "type": "nominal"},
+          {"field": "Ladder score", "type": "quantitative", "format": ","},
+          {"field": "Logged GDP per capita", "type": "quantitative", "format": ","},
+          {"field": "Social support", "type": "quantitative", "format": ","}
+      ]
+    }
+  }

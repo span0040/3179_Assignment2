@@ -56,9 +56,9 @@
       </div>
       <div style="clear:both;"></div>
       <div>
-        <h3>Ladder scores ranking</h3>
-        <p>Consists of: Top 10, Bottom 10, and notable countries</p>
-        <div id="stacked_barchart"></div> 
+        <h3 style ="font-family: 'Ubuntu', sans-serif;">Ladder scores ranking</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10, Bottom 10, and notable countries</p>
+        <div id="map1bar"></div> 
       </div>
     </div>
 
@@ -70,6 +70,12 @@
           (PPP) at constant 2017 international dollar prices are from the October 14,
           2020 update of the World Development Indicators (WDI).</p>
       </div>
+      <div style="clear:both;"></div>
+      <div>
+        <h3 style ="font-family: 'Ubuntu', sans-serif;">GDP per capita ranking</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <div id="map2bar"></div> 
+      </div>
     </div>
 
     <div class="cat3" id="cat3">
@@ -80,6 +86,12 @@
             relatives or friends you can count on to help you whenever you need them or not?"</p>
         <p>Being a binary question (either yes or no) the score is tallied from the average of the responses.</p>
       </div>
+      <div style="clear:both;"></div>
+      <div>
+        <h3 style ="font-family: 'Ubuntu', sans-serif;">Social Support score ranking</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <div id="map3bar"></div> 
+      </div>
     </div>
 
     <div class="cat4" id="cat4">
@@ -89,6 +101,12 @@
         <p>The Healthy Life Expectancy metric is the statistical measure of how long on average a person is expected to live based on current age and sex specific death rates.</p>
         <p>For this report, the data was taken from the World Health Organisation's Global Health Observatory data repository.</p>
       </div>
+      <div style="clear:both;"></div>
+      <div>
+        <h3 style ="font-family: 'Ubuntu', sans-serif;">Healthy life expectancy ranking</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <div id="map4bar"></div> 
+      </div>
     </div>
 
     <div class="cat5" id="cat5">
@@ -97,7 +115,12 @@
         <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="freedom">Freedom to make life choices</span>
         <p>Freedom to make life choices is the national average of responses to the question: "Are you satisfied or dissatisfied with your freedom to choose what
           you do with your life?"</p>
-        
+      </div>
+      <div style="clear:both;"></div>
+      <div>
+        <h3 style ="font-family: 'Ubuntu', sans-serif;">Freedom to make life choices score ranking</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <div id="map5bar"></div> 
       </div>
     </div>
 
@@ -107,6 +130,12 @@
         <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="corruption">Corruption perception</span>
         <p>The Corruption perception metric is derived from the national average of these two questions: "“Is corruption widespread throughout
           the government or not" and “Is corruption widespread within businesses or not?”</p> 
+      </div>
+      <div style="clear:both;"></div>
+      <div>
+        <h3 style ="font-family: 'Ubuntu', sans-serif;">Perception of corruption score ranking</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <div id="map6bar"></div> 
       </div>
     </div>
        
@@ -167,24 +196,33 @@
 
       var spec1 = "map1.json";
       vegaEmbed('#map1', spec1).then(function(result) {}).catch(console.error);
-  
-      var spec2 = "ass2bar.json";
-      vegaEmbed('#stacked_barchart', spec2).then(function(result) {}).catch(console.error);
+      var spec2 = "map1bar.json";
+      vegaEmbed('#map1bar', spec2).then(function(result) {}).catch(console.error);
 
       var spec3 = "map2.json";
       vegaEmbed('#map2', spec3).then(function(result) {}).catch(console.error);
+      var spec8 = "map2bar.json";
+      vegaEmbed('#map2bar', spec8).then(function(result) {}).catch(console.error);
 
       var spec4 = "map3.json";
       vegaEmbed('#map3', spec4).then(function(result) {}).catch(console.error);
+      var spec9 = "map3bar.json";
+      vegaEmbed('#map3bar', spec9).then(function(result) {}).catch(console.error);
 
       var spec5 = "map4.json";
       vegaEmbed('#map4', spec5).then(function(result) {}).catch(console.error);
+      var spec10 = "map4bar.json";
+      vegaEmbed('#map4bar', spec10).then(function(result) {}).catch(console.error);
 
       var spec6 = "map5.json";
       vegaEmbed('#map5', spec6).then(function(result) {}).catch(console.error);
+      var spec11 = "map5bar.json";
+      vegaEmbed('#map5bar', spec11).then(function(result) {}).catch(console.error);
 
       var spec7 = "map6.json";
       vegaEmbed('#map6', spec7).then(function(result) {}).catch(console.error);
+      var spec12 = "map6bar.json";
+      vegaEmbed('#map6bar', spec12).then(function(result) {}).catch(console.error);
     </script>
   </div>
 </body>

@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/span0040/3179_Assignment2/main/ladderscorebar.csv"},
-  "height": {"step": 17},
-  "width": 500,
+  "height": {"step": 24},
+  "width": 700,
   "mark": "bar",
   "params": [{
     "name": "region_selection",
@@ -12,7 +12,7 @@
             null,
             "Commonwealth of Independent States",
             "East Asia",
-            "Latin America and Caribbiean",
+            "Latin America and Caribbean",
             "Middle East and North Africa",
             "North America and ANZ",
             "South Asia",
@@ -23,7 +23,7 @@
             "Show All",
             "Commonwealth of Independent States",
             "East Asia",
-            "Latin America and Caribbiean",
+            "Latin America and Caribbean",
             "Middle East and North Africa",
             "North America and ANZ",
             "South Asia",
@@ -45,14 +45,33 @@
     "x": {
       "aggregate": "sum",
       "field": "Ladder score",
-      "title": "population"
+      "title": "Ladder score"
     },
     "color": {
         "field": "Regions",
         "type": "nominal",
         "scale": {
-            "scheme": "dark2"
-          }
+          "domain": [
+            "Commonwealth of Independent States",
+            "East Asia",
+            "Latin America and Caribbean",
+            "Middle East and North Africa",
+            "North America and ANZ",
+            "South Asia",
+            "Sub-Saharan Africa",
+            "Western Europe"
+          ],
+          "range": [
+            "#0f50b3",
+            "#0f50b3",
+            "#0f50b3",
+            "#0f50b3",
+            "#0f50b3",
+            "#0f50b3",
+            "#0f50b3",
+            "#0f50b3"
+          ]
+        }
     },
     "tooltip": [
         {"field": "Country name", "type": "nominal"},
