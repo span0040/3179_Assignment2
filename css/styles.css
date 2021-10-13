@@ -1,0 +1,70 @@
+.page {
+    width: 2000px;
+    margin: auto;
+    padding: 600px;
+    padding-top: 35px;
+}
+
+.header img {
+    float: left;
+    max-width:230px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+    padding-left: 30px;
+}
+  
+.header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50px;
+}
+
+.pure-u-8-24 p {
+    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+    padding-left: 30px;
+    font-size: 20px;
+}
+
+.gdp{
+    font-weight: bold;
+    color: #108c29
+}
+
+.social_sup {
+    font-weight: bold;
+    color: #863abb
+}
+
+.life_ex {
+    font-weight: bold;
+    color: #EC810C
+}
+
+.freedom {
+    font-weight: bold;
+    color: #0bcbc7
+}
+
+.corruption {
+    font-weight: bold;
+    color: #525354
+}
+
+.life_lad {
+    font-weight: bold;
+    color: #0f50b3
+}
+
+.choromap {
+    padding-left: 30px;
+}
+
+.suptext {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    padding-top: 35px;
+}

@@ -1,36 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
   
-  <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <title>World Happiness Report 2021</title>
+  
 </head>
 <body>
+  <div class="page">
+    <div class="header">
+      <img src="images\whr-cover-ico.png" alt="logo" />
+      <h1>World Happiness Report 2021</h1>
+      <br>
+    </div>
+    <div class = "pure-g">
+      <div class="pure-u-8-24">
+        <p>
+          The World Happiness Report is an annual report that contains rankings and analysis of national happiness, based on respondent ratings of their own lives.
+        </p>
+        <p>The main source of data is the Gallup World Poll, which contains life evaluation categories such as <span class="gdp">Logarithmized GDP per capita</span>, <span class="social_sup">Social Support</span>, 
+          <span class="life_ex">Healthy Life Expectancy</span>, <span class="freedom">Freedom to make life choices</span>, and <span class="corruption">Corruption perception</span> 
+            from respondents from every country polled. These categories are then compiled and weighted to tabluate the <span class="life_lad">Life Ladder Score</span>.
+        </p>
+      </div>
+      <div>
+        <select name="seldis" onchange="showHide(this)">
+          
+          <option value="1">Life Ladder Score</option>
+          <option value="2">GDP per Capita</option>
+          <option value="3">Social Support</option>
+          <option value="4">Healthy Life Expectancy</option>
+          <option value="5">Freedom to make life choices</option>
+          <option value="6">Corruption perception</option>
+        </select>
+      </div>
+    </div>
   
-<div id="choropleth_map"></div>
-<br>
-<h3>Ladder scores ranking</h3>
-<p>Consists of: Top 10, Bottom 10, and notable countries</p>
-<div id="stacked_barchart"></div>  
+    <div class="1">
+      <div class="choromap" id="map1" style="float:left;"></div>
+      <div class="suptext">
+        <p>test etst test</p>
+      </div>
+      <div style="clear:both;"></div>
+      <div>
+        <h3>Ladder scores ranking</h3>
+        <p>Consists of: Top 10, Bottom 10, and notable countries</p>
+        <div id="stacked_barchart"></div> 
+      </div>
+    </div>
 
-<script type="text/javascript">
+    <div class="2">
+      <div class="choromap" id="map2" style="float:left;"></div>
+      <div class="suptext">
+        <p>test etst test</p>
+      </div>
+    </div>
+       
 
-  var spec2 = "ass2map.json";
-  vegaEmbed('#choropleth_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+    <script type="text/javascript">
+      var spec1 = "map1.json";
+      vegaEmbed('#map1', spec1).then(function(result) {}).catch(console.error);
   
-  var spec3 = "ass2bar.json";
-  vegaEmbed('#stacked_barchart', spec3).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+      var spec2 = "ass2bar.json";
+      vegaEmbed('#stacked_barchart', spec2).then(function(result) {}).catch(console.error);
 
+      var spec3 = "map2.json";
+      vegaEmbed('#map2', spec3).then(function(result) {}).catch(console.error);
+    </script>
+  </div>
 </body>
 </html>

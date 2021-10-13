@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "World Happiness Report 2021 - Logarithmized GDP per capita",
+    "width": 1000,
+    "height": 1000,
+    "projection": {
+          "type": "equalEarth",
+          "center": { "expr": "center_to" },
+          "scale": { "expr": "zoom_level" }
+      },
+    "params": [
+          {
+              "name": "zoom_level",
+              "value": 205,
+              "bind": {
+                  "input": "range",
+                  "min": 205,
+                  "max": 700,
+                  "step": 10,
+                  "name": "Zoom: "
+              }
+          },
+          {
+              "name": "center_to",
+              "value": [0, 0],
+              "bind": {
+                  "input": "select",
+                  "options": [
+                      [0, 0],
+                      [14.5, -2.5],
+                      [84.9, 25.4],
+                      [-80, 30],
+                      [-65, -10],
+                      [14.5, 50],
+                      [130, -20]
+                  ],
+                  "labels": ["World Map", "Africa", "Asia", "North America", "South America", "Europe", "Oceania"],
+                  "name": "Map Centre: "
+              }
+          }
+      ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/span0040/3179_Assignment2/main/3179map2.topojson",
+      "format": {"type": "topojson", "feature": "custom.geo"}
+    },
+    "layer":[
+      {
+        "transform": [
+            {"calculate": "'Data is not available in ' + datum.properties.NAME", "as": "note"}
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {
+          "tooltip": {
+            "field": "note"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "lookup": "properties.name",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/span0040/3179_Assignment2/main/w9hw.csv"
+              },
+              "key": "Country name",
+              "fields": ["Logged GDP per capita"]
+            }
+          }
+        ],
+        "mark": {"type": "geoshape"},
+        "encoding": {
+          "color": {
+            "field": "Logged GDP per capita",
+            "type": "quantitative",
+            "scale": {
+              "scheme": "greens"
+            }
+          },
+          "tooltip": [
+            {"field": "properties.name", "type": "nominal", "title": "Country"},
+            {"field": "Logged GDP per capita", "type": "quantitative"}
+          ]
+        }
+      }
+    ]
+  }

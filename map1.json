@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "2021 World Happiness Report Ranking - Ladder Score",
+  "title": "World Happiness Report 2021 - Ladder Score",
   "width": 1000,
-  "height": 800,
+  "height": 1000,
   "projection": {
         "type": "equalEarth",
         "center": { "expr": "center_to" },
@@ -34,7 +34,7 @@
                     [14.5, 50],
                     [130, -20]
                 ],
-                "labels": ["Null", "Africa", "Asia", "North America", "South America", "Europe", "Oceania"],
+                "labels": ["World Map", "Africa", "Asia", "North America", "South America", "Europe", "Oceania"],
                 "name": "Map Centre: "
             }
         }
@@ -74,7 +74,7 @@
           "field": "Ladder score",
           "type": "quantitative",
           "scale": {
-            "scheme": "tealblues"
+            "scheme": "blues"
           }
         },
         "tooltip": [
