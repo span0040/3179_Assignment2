@@ -14,10 +14,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <title>World Happiness Report 2021</title>
-  
 </head>
-<body>
-  <div class="page">
+<body style="background-color: white;">
+  <div style="background-color: #D3D3D3; width: 1700px; height:1950px; margin: auto; padding-top: 5px;">
     <div class="header">
       <img src="images\whr-cover-ico.png" alt="logo" />
       <h1>World Happiness Report 2021</h1>
@@ -46,7 +45,6 @@
         </select>
       </div>
     </div>
-  
     <div class="cat1" id="cat1">
       <div class="choromap" id="map1" style="float:left;"></div>
       <div class="pure-u-5-24">
@@ -55,10 +53,11 @@
             with the best possible life for them as a 10 and the worst possible as a 0.</p>
       </div>
       <div style="clear:both;"></div>
-      <div>
+      <div style="padding-top: 30px; padding-left: 30px;">
         <h3 style ="font-family: 'Ubuntu', sans-serif;">Ladder scores ranking</h3>
         <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10, Bottom 10, and notable countries</p>
-        <div id="map1bar"></div> 
+        <div id="map1bar" style="float: left;"></div>
+        <div id="map1slope"></div>
       </div>
     </div>
 
@@ -71,10 +70,11 @@
           2020 update of the World Development Indicators (WDI).</p>
       </div>
       <div style="clear:both;"></div>
-      <div>
+      <div style="padding-top: 40px; padding-left: 30px;">
         <h3 style ="font-family: 'Ubuntu', sans-serif;">GDP per capita ranking</h3>
         <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
-        <div id="map2bar"></div> 
+        <div id="map2bar" style="float: left;"></div> 
+        <div id="map2slope"></div>
       </div>
     </div>
 
@@ -87,10 +87,11 @@
         <p>Being a binary question (either yes or no) the score is tallied from the average of the responses.</p>
       </div>
       <div style="clear:both;"></div>
-      <div>
+      <div style="padding-top: 40px; padding-left: 30px;">
         <h3 style ="font-family: 'Ubuntu', sans-serif;">Social Support score ranking</h3>
         <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
-        <div id="map3bar"></div> 
+        <div id="map3bar" style="float:left;"></div> 
+        <div id="map3slope"></div>
       </div>
     </div>
 
@@ -102,10 +103,11 @@
         <p>For this report, the data was taken from the World Health Organisation's Global Health Observatory data repository.</p>
       </div>
       <div style="clear:both;"></div>
-      <div>
+      <div style="padding-top: 40px; padding-left: 30px;">
         <h3 style ="font-family: 'Ubuntu', sans-serif;">Healthy life expectancy ranking</h3>
         <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
-        <div id="map4bar"></div> 
+        <div id="map4bar" style="float:left;"></div> 
+        <div id="map4slope"></div>
       </div>
     </div>
 
@@ -117,10 +119,11 @@
           you do with your life?"</p>
       </div>
       <div style="clear:both;"></div>
-      <div>
+      <div style="padding-top: 40px; padding-left: 30px;">
         <h3 style ="font-family: 'Ubuntu', sans-serif;">Freedom to make life choices score ranking</h3>
         <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
-        <div id="map5bar"></div> 
+        <div id="map5bar" style="float:left;"></div>
+        <div id="map5slope"></div>
       </div>
     </div>
 
@@ -132,98 +135,109 @@
           the government or not" and “Is corruption widespread within businesses or not?”</p> 
       </div>
       <div style="clear:both;"></div>
-      <div>
+      <div style="padding-top: 40px; padding-left: 30px;">
         <h3 style ="font-family: 'Ubuntu', sans-serif;">Perception of corruption score ranking</h3>
         <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
-        <div id="map6bar"></div> 
+        <div id="map6bar" style="float:left;"></div> 
+        <div id="map6slope"></div>
       </div>
     </div>
-       
-
-    <script type="text/javascript">
-      function changedisplay(value){
-        if(value == 1){
-          document.getElementById("cat2").style.display = "none";
-          document.getElementById("cat3").style.display = "none";
-          document.getElementById("cat4").style.display = "none";
-          document.getElementById("cat5").style.display = "none";
-          document.getElementById("cat6").style.display = "none";
-          document.getElementById("cat1").style.display = "block";
-        }
-        else if (value == 2){
-          document.getElementById("cat1").style.display = "none";
-          document.getElementById("cat3").style.display = "none";
-          document.getElementById("cat4").style.display = "none";
-          document.getElementById("cat5").style.display = "none";
-          document.getElementById("cat6").style.display = "none";
-          document.getElementById("cat2").style.display = "block";
-        }
-        else if (value == 3){
-          document.getElementById("cat1").style.display = "none";
-          document.getElementById("cat2").style.display = "none";
-          document.getElementById("cat4").style.display = "none";
-          document.getElementById("cat5").style.display = "none";
-          document.getElementById("cat6").style.display = "none";
-          document.getElementById("cat3").style.display = "block";
-        }
-        else if (value == 4){
-          document.getElementById("cat1").style.display = "none";
-          document.getElementById("cat2").style.display = "none";
-          document.getElementById("cat3").style.display = "none";
-          document.getElementById("cat5").style.display = "none";
-          document.getElementById("cat6").style.display = "none";
-          document.getElementById("cat4").style.display = "block";
-        }
-        else if (value == 5){
-          document.getElementById("cat1").style.display = "none";
-          document.getElementById("cat2").style.display = "none";
-          document.getElementById("cat3").style.display = "none";
-          document.getElementById("cat4").style.display = "none";
-          document.getElementById("cat6").style.display = "none";
-          document.getElementById("cat5").style.display = "block";
-        }
-
-        else if (value == 6){
-          document.getElementById("cat1").style.display = "none";
-          document.getElementById("cat2").style.display = "none";
-          document.getElementById("cat3").style.display = "none";
-          document.getElementById("cat4").style.display = "none";
-          document.getElementById("cat5").style.display = "none";
-          document.getElementById("cat6").style.display = "block";
-        }
-
+  </div>
+  <script type="text/javascript">
+    function changedisplay(value){
+      if(value == 1){
+        document.getElementById("cat2").style.display = "none";
+        document.getElementById("cat3").style.display = "none";
+        document.getElementById("cat4").style.display = "none";
+        document.getElementById("cat5").style.display = "none";
+        document.getElementById("cat6").style.display = "none";
+        document.getElementById("cat1").style.display = "block";
+      }
+      else if (value == 2){
+        document.getElementById("cat1").style.display = "none";
+        document.getElementById("cat3").style.display = "none";
+        document.getElementById("cat4").style.display = "none";
+        document.getElementById("cat5").style.display = "none";
+        document.getElementById("cat6").style.display = "none";
+        document.getElementById("cat2").style.display = "block";
+      }
+      else if (value == 3){
+        document.getElementById("cat1").style.display = "none";
+        document.getElementById("cat2").style.display = "none";
+        document.getElementById("cat4").style.display = "none";
+        document.getElementById("cat5").style.display = "none";
+        document.getElementById("cat6").style.display = "none";
+        document.getElementById("cat3").style.display = "block";
+      }
+      else if (value == 4){
+        document.getElementById("cat1").style.display = "none";
+        document.getElementById("cat2").style.display = "none";
+        document.getElementById("cat3").style.display = "none";
+        document.getElementById("cat5").style.display = "none";
+        document.getElementById("cat6").style.display = "none";
+        document.getElementById("cat4").style.display = "block";
+      }
+      else if (value == 5){
+        document.getElementById("cat1").style.display = "none";
+        document.getElementById("cat2").style.display = "none";
+        document.getElementById("cat3").style.display = "none";
+        document.getElementById("cat4").style.display = "none";
+        document.getElementById("cat6").style.display = "none";
+        document.getElementById("cat5").style.display = "block";
       }
 
-      var spec1 = "map1.json";
-      vegaEmbed('#map1', spec1).then(function(result) {}).catch(console.error);
-      var spec2 = "map1bar.json";
-      vegaEmbed('#map1bar', spec2).then(function(result) {}).catch(console.error);
+      else if (value == 6){
+        document.getElementById("cat1").style.display = "none";
+        document.getElementById("cat2").style.display = "none";
+        document.getElementById("cat3").style.display = "none";
+        document.getElementById("cat4").style.display = "none";
+        document.getElementById("cat5").style.display = "none";
+        document.getElementById("cat6").style.display = "block";
+      }
 
-      var spec3 = "map2.json";
-      vegaEmbed('#map2', spec3).then(function(result) {}).catch(console.error);
-      var spec8 = "map2bar.json";
-      vegaEmbed('#map2bar', spec8).then(function(result) {}).catch(console.error);
+    }
 
-      var spec4 = "map3.json";
-      vegaEmbed('#map3', spec4).then(function(result) {}).catch(console.error);
-      var spec9 = "map3bar.json";
-      vegaEmbed('#map3bar', spec9).then(function(result) {}).catch(console.error);
+    var spec1 = "map1.json";
+    vegaEmbed('#map1', spec1).then(function(result) {}).catch(console.error);
+    var spec2 = "map1bar.json";
+    vegaEmbed('#map1bar', spec2).then(function(result) {}).catch(console.error);
+    var spec13 = "map1slope.json";
+    vegaEmbed('#map1slope', spec13).then(function(result) {}).catch(console.error);
 
-      var spec5 = "map4.json";
-      vegaEmbed('#map4', spec5).then(function(result) {}).catch(console.error);
-      var spec10 = "map4bar.json";
-      vegaEmbed('#map4bar', spec10).then(function(result) {}).catch(console.error);
+    var spec3 = "map2.json";
+    vegaEmbed('#map2', spec3).then(function(result) {}).catch(console.error);
+    var spec8 = "map2bar.json";
+    vegaEmbed('#map2bar', spec8).then(function(result) {}).catch(console.error);
+    var spec14 = "map2slope.json";
+    vegaEmbed('#map2slope', spec14).then(function(result) {}).catch(console.error);
 
-      var spec6 = "map5.json";
-      vegaEmbed('#map5', spec6).then(function(result) {}).catch(console.error);
-      var spec11 = "map5bar.json";
-      vegaEmbed('#map5bar', spec11).then(function(result) {}).catch(console.error);
+    var spec4 = "map3.json";
+    vegaEmbed('#map3', spec4).then(function(result) {}).catch(console.error);
+    var spec9 = "map3bar.json";
+    vegaEmbed('#map3bar', spec9).then(function(result) {}).catch(console.error);
+    var spec15 = "map3slope.json";
+    vegaEmbed('#map3slope', spec15).then(function(result) {}).catch(console.error);
 
-      var spec7 = "map6.json";
-      vegaEmbed('#map6', spec7).then(function(result) {}).catch(console.error);
-      var spec12 = "map6bar.json";
-      vegaEmbed('#map6bar', spec12).then(function(result) {}).catch(console.error);
-    </script>
-  </div>
+    var spec5 = "map4.json";
+    vegaEmbed('#map4', spec5).then(function(result) {}).catch(console.error);
+    var spec10 = "map4bar.json";
+    vegaEmbed('#map4bar', spec10).then(function(result) {}).catch(console.error);
+    var spec16 = "map4slope.json";
+    vegaEmbed('#map4slope', spec16).then(function(result) {}).catch(console.error);
+
+    var spec6 = "map5.json";
+    vegaEmbed('#map5', spec6).then(function(result) {}).catch(console.error);
+    var spec11 = "map5bar.json";
+    vegaEmbed('#map5bar', spec11).then(function(result) {}).catch(console.error);
+    var spec17 = "map5slope.json";
+    vegaEmbed('#map5slope', spec17).then(function(result) {}).catch(console.error);
+
+    var spec7 = "map6.json";
+    vegaEmbed('#map6', spec7).then(function(result) {}).catch(console.error);
+    var spec12 = "map6bar.json";
+    vegaEmbed('#map6bar', spec12).then(function(result) {}).catch(console.error);
+    var spec18 = "map6slope.json";
+    vegaEmbed('#map6slope', spec18).then(function(result) {}).catch(console.error);
+  </script>
 </body>
 </html>

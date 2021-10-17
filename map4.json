@@ -1,8 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "World Happiness Report 2021 - Healthy life expectancy",
+    "title": {
+      "text": "World Happiness Report 2021 - Healthy life expectancy",
+      "fontSize": 20
+    },
     "width": 1000,
-    "height": 1000,
+    "height": 550,
     "projection": {
           "type": "equalEarth",
           "center": { "expr": "center_to" },

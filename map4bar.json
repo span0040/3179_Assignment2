@@ -40,12 +40,14 @@
       "y": {
         "field": "Country name",
         "type": "ordinal",
-        "sort": "-x"
+        "sort": "-x",
+        "axis": {"title": "Country Name", "titleFontSize": 15, "labelFontSize": 15}
       },
       "x": {
         "aggregate": "sum",
         "field": "Healthy life expectancy",
-        "title": "Healthy life expectancy"
+        "title": "Healthy life expectancy",
+        "axis": {"title": "Healthy life expectancy", "titleFontSize": 15, "labelFontSize": 15}
       },
       "color": {
           "field": "Regions",
@@ -62,16 +64,17 @@
               "Western Europe"
             ],
             "range": [
-              "#EC810C",
-              "#EC810C",
-              "#EC810C",
-              "#EC810C",
-              "#EC810C",
-              "#EC810C",
-              "#EC810C",
-              "#EC810C"
+              "#FF0000",
+              "#00F8CF",
+              "#00FF08",
+              "#784212",
+              "#DEFD00",
+              "#A500F8",
+              "#F86500",
+              "#0f50b3"
             ]
-          }
+          },
+          "legend": {"titleFontSize": 15, "labelFontSize": 15}
       },
       "tooltip": [
           {"field": "Country name", "type": "nominal"},

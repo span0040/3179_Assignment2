@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/span0040/3179_Assignment2/master/ladderscoreslope.csv"},
+    "mark": {
+      "type": "line",
+      "strokeWidth": 5,
+      "tooltip": "true"
+    },
+    "width": {"step": 200},
+    "height": 676,
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "ordinal",
+        "scale": {"padding": 0.1},
+        "axis": {"title": "Year", "titleFontSize": 15, "labelFontSize": 15}
+      },
+      "y": {
+        "title": "Freedom to make life choices",
+        "aggregate": "median",
+        "field": "Freedom to make life choices",
+        "type": "quantitative",
+        "scale": {"domain":[0.6,1]},
+        "axis": {"title": "Freedom to make life choices", "titleFontSize": 15, "labelFontSize": 15}
+      },
+      "color": {"field": "Country name", "type": "nominal","scale":{"scheme": "tableau20"}, "legend": {"symbolStrokeWidth": 5,"symbolSize": 1000,"titleFontSize": 15, "labelFontSize": 15}}
+    }
+  }
