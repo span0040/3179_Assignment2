@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="zoom: 75%;">
 <head>
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -16,7 +16,7 @@
   <title>World Happiness Report 2021</title>
 </head>
 <body style="background-color: white;">
-  <div style="background-color: #D3D3D3; width: 1700px; height:1950px; margin: auto; padding-top: 5px;">
+  <div style="background-color: #D3D3D3; width: 1700px; height:2000px; margin: auto; padding-top: 5px;">
     <div class="header">
       <img src="images\whr-cover-ico.png" alt="logo" />
       <h1>World Happiness Report 2021</h1>
@@ -32,9 +32,9 @@
             from respondents from every country polled.
         </p>
       </div>
-      <div class="pure-u-1-24"></div>
-      <div class="pure-u-6-24">
-        <h2 style ="padding-top: 50px; font-family: 'Ubuntu', sans-serif;">Select category:</h2>
+    
+      <div class="pure-u-6-24" style="padding-left: 100px;">
+        <h2 style ="padding-top: 20px; font-family: 'Ubuntu', sans-serif;">Select category:</h2>
         <select class="select" onchange="changedisplay(value)">
           <option value="1">Life Ladder Score</option>
           <option value="2">GDP per Capita</option>
@@ -47,15 +47,22 @@
     </div>
     <div class="cat1" id="cat1">
       <div class="choromap" id="map1" style="float:left;"></div>
-      <div class="pure-u-5-24">
+      <div class="pure-u-6-24" style="padding-left: 40px; font-family: 'Ubuntu', sans-serif; font-size: 20px; font-weight: bold;">
         <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="life_lad">Life Ladder Score</span></h3>
         <p>The Life Ladder Score is derived from asking respondents to evaluate their current life as a whole using the image of a ladder, 
             with the best possible life for them as a 10 and the worst possible as a 0.</p>
+        <p>From the rankings, we can see that Western Europe, North America and ANZ dominate the top end, whereas on the bottom end Sub-Saharan Africa is 
+          the most common region at the bottom of the rankings.
+        </p>
+        <p>
+          As for the change in scores for the past year, surprisingly almost all scores across the board are on an upward trend. 
+          This shows that countries have been resilient in facing the COVID-19 pandemic.
+        </p>
       </div>
       <div style="clear:both;"></div>
       <div style="padding-top: 30px; padding-left: 30px;">
-        <h3 style ="font-family: 'Ubuntu', sans-serif;">Ladder scores ranking</h3>
-        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10, Bottom 10, and notable countries</p>
+        <h3 style ="font-family: 'Ubuntu', sans-serif; font-size: 30px;">Ladder scores ranking and change trends</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif; font-size: 20px;">Consists of: Top 10, Bottom 10, and other notable countries with available historical data</p>
         <div id="map1bar" style="float: left;"></div>
         <div id="map1slope"></div>
       </div>
@@ -63,16 +70,23 @@
 
     <div class="cat2" id="cat2">
       <div class="choromap" id="map2" style="float:left;"></div>
-      <div class="pure-u-5-24">
+      <div class="pure-u-6-24" style="padding-left: 15px; font-family: 'Ubuntu', sans-serif; font-size: 20px; font-weight: bold;">
         <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="gdp">Logarithmized GDP per capita</span>
-        <p>The statistics of GDP per capita (variable name gdp) in purchasing power parity
+        <p style="font-size: 20px;">The statistics of GDP per capita (variable name gdp) in purchasing power parity
           (PPP) at constant 2017 international dollar prices are from the October 14,
           2020 update of the World Development Indicators (WDI).</p>
+        <p style="font-size: 20px;">
+          The GDP rankings are led by a large percentage of countries coming from Western Europe, with a sole representative 
+            of the Middle Eastern and North Africa region in the United Arab Emirates being in the top 3.
+        </p>
+        <p style="font-size: 20px;">
+          Due to COVID-19, it is not a surprise that the GDP of countries across the board have dipped for 2020. With the world slowly recovering, it will be interesting to see which countries are able to bounce back.
+        </p>
       </div>
       <div style="clear:both;"></div>
       <div style="padding-top: 40px; padding-left: 30px;">
-        <h3 style ="font-family: 'Ubuntu', sans-serif;">GDP per capita ranking</h3>
-        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <h3 style ="font-family: 'Ubuntu', sans-serif; font-size: 30px;">GDP per capita ranking and change trends</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif; font-size: 20px;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, and other notable countries</p>
         <div id="map2bar" style="float: left;"></div> 
         <div id="map2slope"></div>
       </div>
@@ -85,11 +99,17 @@
         <p>Social Support is the metric that is derived from the respondents'answer to the question "If you were in trouble, do you have 
             relatives or friends you can count on to help you whenever you need them or not?"</p>
         <p>Being a binary question (either yes or no) the score is tallied from the average of the responses.</p>
+        <p>Social support scores at the top ranks mostly come from countries in Western Europe, as well as north America and ANZ. 
+          At the bottom, a large amount of countries seem to come from the Sub-Saharan African region.
+        </p>
+        <p>
+          For the change trends in this category, it seems to be an overall increase in social support scores for most countries, with some decreasing scores as well.
+        </p>
       </div>
       <div style="clear:both;"></div>
       <div style="padding-top: 40px; padding-left: 30px;">
-        <h3 style ="font-family: 'Ubuntu', sans-serif;">Social Support score ranking</h3>
-        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <h3 style ="font-family: 'Ubuntu', sans-serif; font-size: 30px;">Social Support score ranking and change trends</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif; font-size: 20px;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, and other additional notable countries</p>
         <div id="map3bar" style="float:left;"></div> 
         <div id="map3slope"></div>
       </div>
@@ -101,11 +121,17 @@
         <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="life_ex">Healthy Life Expectancy</span>
         <p>The Healthy Life Expectancy metric is the statistical measure of how long on average a person is expected to live based on current age and sex specific death rates.</p>
         <p>For this report, the data was taken from the World Health Organisation's Global Health Observatory data repository.</p>
+        <p>Japan leads this category, but most countries at the top end still come from the western European region. 
+          Similarly, countries at the bottom of the rankings come from the Sub-Saharan African region.
+        </p>
+        <p>
+          Despite the global pandemic, life expectancies seem to be unaffected, with some countries moving in an upward change trend. 
+        </p>
       </div>
       <div style="clear:both;"></div>
       <div style="padding-top: 40px; padding-left: 30px;">
-        <h3 style ="font-family: 'Ubuntu', sans-serif;">Healthy life expectancy ranking</h3>
-        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <h3 style ="font-family: 'Ubuntu', sans-serif; font-size: 30px;">Healthy life expectancy ranking and change trends</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif; font-size: 20px;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, and other additional notable countries</p>
         <div id="map4bar" style="float:left;"></div> 
         <div id="map4slope"></div>
       </div>
@@ -117,11 +143,14 @@
         <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="freedom">Freedom to make life choices</span>
         <p>Freedom to make life choices is the national average of responses to the question: "Are you satisfied or dissatisfied with your freedom to choose what
           you do with your life?"</p>
+        <p>The rankings at the top end are slightly more diverse with multiple regions making an appearance. Same goes for the bottom end, with a big country such as Russia featuring in the bottom 10. </p>
+        <p>In terms of change trends, there is a lot more variation between countries and regions. This is as the score heavily depends on the governance and culture of countries.
+        </p>
       </div>
       <div style="clear:both;"></div>
       <div style="padding-top: 40px; padding-left: 30px;">
-        <h3 style ="font-family: 'Ubuntu', sans-serif;">Freedom to make life choices score ranking</h3>
-        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <h3 style ="font-family: 'Ubuntu', sans-serif; font-size: 30px;">Freedom to make life choices score ranking and change trends</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif; font-size: 20px;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, and other additional notable countries</p>
         <div id="map5bar" style="float:left;"></div>
         <div id="map5slope"></div>
       </div>
@@ -133,11 +162,14 @@
         <h3 style="font-size: 30px; font-family: 'Ubuntu', sans-serif; "><span class="corruption">Corruption perception</span>
         <p>The Corruption perception metric is derived from the national average of these two questions: "“Is corruption widespread throughout
           the government or not" and “Is corruption widespread within businesses or not?”</p> 
+        <p>	For this category, the higher ranking determines the country that has the highest perceived corruption, and same for the bottom ranks. There is a lot less correlation between region and ranking, with scores varying between high and low from countries from the same region.
+        </p>
+        <p>As a result, the change trends for this category do not have any correlation to their region or the COVID-19 pandemic, and is specific to the governance and culture of the country.</p>
       </div>
       <div style="clear:both;"></div>
       <div style="padding-top: 40px; padding-left: 30px;">
-        <h3 style ="font-family: 'Ubuntu', sans-serif;">Perception of corruption score ranking</h3>
-        <p style ="font-family: 'Ubuntu', sans-serif;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, as well as additional notable countries</p>
+        <h3 style ="font-family: 'Ubuntu', sans-serif; font-size: 30px;">Perception of corruption score ranking and change trends</h3>
+        <p style ="font-family: 'Ubuntu', sans-serif; font-size: 20px;">Consists of: Top 10 and Bottom 10 Ladder score ranked countries, and other additional notable countries</p>
         <div id="map6bar" style="float:left;"></div> 
         <div id="map6slope"></div>
       </div>
